@@ -191,6 +191,11 @@ namespace gif_screenshot
             this.CommandBindings.Remove( closeToQuitOverlay );
             this.InputBindings.Remove( escapeToClose );
 
+            if(screenshotTimer != null && screenshotTimer.Enabled )
+            {
+                screenshotTimer.Stop();
+            }
+
             this.parentWindow.Show();
             this.Close();
         }
